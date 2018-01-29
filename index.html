@@ -9,7 +9,7 @@
                     <h2>Enter a Location</h2>
                     
                     <form>
-                              <input type="text" id="selection1" value="atlanta">
+                              <input type="text" id="city" value="atlanta">
                               <button id="search">Select</button>
                               
                               <img src="https://www.w3schools.com/images/w3schools_green.jpg" alt="W3Schools.com">
@@ -17,10 +17,23 @@
                     
                     <script>
                               var api = "http://api.openweathermap.org/data/2.5/weather?q=";
-                              var city = "atlanta";
                               var units = "&units=imperial";
                               var apiKey = "&APPID=3a556b4fb442dc2dc5d66ccbda322754";
-                              var url = api + city + units + apiKey;
+                              
+                              var input;
+                              
+                              function setup() {
+                                        var button = select("#search");
+                                        button.mousePressed(getWeather);
+                                        
+                                        input = select("#city);
+                              }
+                              
+                              function getWeather() {
+                                        var url = api + input.value() + units + apiKey;
+
+                                        loadJSON(url, );
+                              }
                     </script>
 
 
