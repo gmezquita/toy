@@ -12,7 +12,7 @@
                               <input type="text" id="city" value="atlanta">
                               <button id="search">Select</button>
                               
-                              <img src="https://www.w3schools.com/images/w3schools_green.jpg" alt="W3Schools.com">
+                              <img src="https://pixabay.com/api/?key=6747214-3dc8160dc8f5e1a8d06570837&q=yellow+flowers&image_type=photo" alt="pixabay.com">
                     </form>
                     
                     <script>
@@ -20,19 +20,19 @@
                               var units = "&units=imperial";
                               var apiKey = "&APPID=3a556b4fb442dc2dc5d66ccbda322754";
                               
+                              var weatherJSON;
                               var input;
                               
-                              function setup() {
-                                        var button = select("#search");
-                                        button.mousePressed(getWeather);
-                                        
-                                        input = select("#city);
-                              }
+                              var button = select("#search");
+                              button.mousePressed(getWeather);
+                              input = select("#city);
                               
                               function getWeather() {
                                         var url = api + input.value() + units + apiKey;
-
-                                        loadJSON(url, );
+                                                  
+                                        var xhr = new XMLHttpRequest();
+                                        xhr.open("GET", url, false);
+                                        xhr.send();
                               }
                     </script>
 
