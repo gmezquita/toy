@@ -12,11 +12,13 @@
                               <input type="text" id="city" value="atlanta">
                               <button id="search">Select</button>
                               </br>
+                              </br>
                               
                               <img src="https://cdn.pixabay.com/photo/2018/01/05/16/24/rose-3063284_150.jpg" alt="pixabay.com">
                     </form>
                     
                     <script>
+                              
                               var api = "http://api.openweathermap.org/data/2.5/weather?q=";
                               var city = "atlanta";
                               var units = "&units=imperial";
@@ -31,17 +33,17 @@
                               xhr.open("GET", "https://www.codecademy.com/", false);
                               xhr.send();
                               
-//                               var button = select("#search");
-//                               button.mousePressed(getWeather);
-//                               input = select("#city);
+                              var button = select("#search");
+                              button.mousePressed(getWeather);
+                              input = select("#city);
                               
-//                               function getWeather() {
+                              function getWeather() {
 //                                         var url = api + input.value() + units + apiKey;
                                                   
-//                                         var xhr = new XMLHttpRequest();
-//                                         xhr.open("GET", url, false);
-//                                         xhr.send();
-//                               }
+                                        var xhr = new XMLHttpRequest();
+                                        xhr.open("GET", url, false);
+                                        xhr.send();
+                              }
                     </script>
 
 
