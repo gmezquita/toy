@@ -11,17 +11,25 @@
                     <form>
                               <input type="text" id="city" value="atlanta">
                               <button id="search">Select</button>
+                              </br>
                               
                               <img src="https://cdn.pixabay.com/photo/2018/01/05/16/24/rose-3063284_150.jpg" alt="pixabay.com">
                     </form>
                     
                     <script>
                               var api = "http://api.openweathermap.org/data/2.5/weather?q=";
+                              var city = "atlanta";
                               var units = "&units=imperial";
                               var apiKey = "&APPID=3a556b4fb442dc2dc5d66ccbda322754";
+                              var url = api + city + units + apiKey;
                               
                               var weatherJSON;
+                              var pixabayJSON;
                               var input;
+                              
+                              var weatherXHR = new XMLHttpRequest();
+                              xhr.open("GET", "https://www.codecademy.com/", false);
+                              xhr.send();
                               
 //                               var button = select("#search");
 //                               button.mousePressed(getWeather);
