@@ -32,8 +32,10 @@
                               var input;
                               
                               $.getJSON(weatherURL, function(data){
-                                        weatherJSON = data;
+                                        console.log(data['weather']);
+                                        console.log("weather got!");
                                         console.log(data);
+                                        
                               });
                               
                               console.log(weatherJSON);
