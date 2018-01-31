@@ -36,7 +36,7 @@
                               var input;
                               
                               var weatherRequest = new XMLHttpRequest();
-                              weatherRequest.open("GET", weatherURL, false);
+                              weatherRequest.open("GET", weatherURL);
                               weatherRequest.onLoad = function() {
                                         console.log(weatherRequest.responseText);
                                         console.log("Inside onLoad finished.");
