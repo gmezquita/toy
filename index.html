@@ -32,18 +32,11 @@
                               var input;
                               
                               $.getJSON(weatherURL, function(data){
-                                        
+                                        weatherJSON = data;
                                         console.log(data);
                               });
                               
-//                               var weatherRequest = new XMLHttpRequest();
-//                               weatherRequest.open("GET", weatherURL);
-//                               weatherRequest.send();
-                              
-//                               console.log("before status");
-//                               console.log(weatherRequest.status);
-//                               console.log(weatherRequest.statusText);
-//                               console.log("after status");
+                              console.log(weatherJSON[1]);
                                              
                     </script>
 
