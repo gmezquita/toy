@@ -29,11 +29,11 @@
                               var input;
                               
                               var weatherRequest = new XMLHttpRequest();
-                              xhr.open("GET", weatherURL, false);
-                              xhr.onLoad = function() {
+                              weatherRequest.open("GET", weatherURL, false);
+                              weatherRequest.onLoad = function() {
                                         console.log(weatherRequest.responseText());
                               };
-                              xhr.send();
+                              weatherRequest.send();
                                              
                     </script>
 
