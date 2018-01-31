@@ -32,13 +32,15 @@
                               var input;
                               
                               $.getJSON(weatherURL, function(data){
+                                        
+//                                         $.each(data, function(index, element){
+//                                                   console.log(data);
+//                                         });
+                                        
                                         console.log(data);
                                         
-                                        console.log(data['weather']);
-                                        console.log("weather got!");
-                                        
-                                        console.log(data['description']);
-                                        console.log("weather stored, description got!");
+                                        console.log(data.weather[0].description);
+                                        console.log("weather desc got!");
                                         
                                         
                               });
