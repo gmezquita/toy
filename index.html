@@ -28,21 +28,14 @@
                               var apiKey = "&APPID=3a556b4fb442dc2dc5d66ccbda322754";
                               var weatherURL = api + city + units + apiKey;
                               
-                              var weatherJSON;
+                              var weatherDesc;
                               var input;
                               
                               $.getJSON(weatherURL, function(data){
                                         
-//                                         $.each(data, function(index, element){
-//                                                   console.log(data);
-//                                         });
-                                        
                                         console.log(data);
-                                        
                                         console.log(data.weather[0].description);
-                                        console.log("weather desc got!");
-                                        
-                                        
+                                        weatherDesc = data.weather[0].description;
                               });
                                              
                     </script>
