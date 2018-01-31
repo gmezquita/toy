@@ -32,6 +32,7 @@
                               weatherRequest.open("GET", weatherURL, false);
                               weatherRequest.onLoad = function() {
                                         console.log(weatherRequest.responseText);
+                                        console.log("Inside onLoad finished.");
                               };
                               console.log("Loaded weather request.");
                               weatherRequest.send();
