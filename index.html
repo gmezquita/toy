@@ -27,23 +27,22 @@
                               var units = "&units=imperial";
                               var apiKey = "&APPID=3a556b4fb442dc2dc5d66ccbda322754";
                               var weatherURL = api + city + units + apiKey;
-                              var weatherDesc;
+//                               var weatherDesc;
                               
-                              var api2 = "https://api.openweathermap.org/data/2.5/weather?q=";
-                              var 
-                              var apiKey = "";
-                              
-                              var input;
+                              var api2 = "https://pixabay.com/api/?&image_type=photo&pretty=true&";
+                              var apiKey2 = "key=6747214-3dc8160dc8f5e1a8d06570837";
+                              var pixabayURL = api2 + apiKey2;
                               
                               $.getJSON(weatherURL, function(data){
                                         $.each(weatherData, function() {});
                                         console.log(data);
-                                        console.log(data.weather[0].description);
+                                        console.log("Weather desc listed from data not saved: " + data.weather[0].description);
+                                        var weatherDesc = data.weather[0].description;
+                                        console.log("weatherDesc saved in variable (we need this for pixabay url): " + weatherDesc);
                                         
-                                        $.getJSON(pixabayURL, function(data2) {
+                                        $.getJSON(pixabayURL + "&q=" + weatherDesc, function(data2) {
                                                   $.each(pixabayData, function() {});
                                                   console.log(data2);
-                                                  console.log(data2.);
                                         });
                               });
                                              
