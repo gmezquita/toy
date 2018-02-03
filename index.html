@@ -34,7 +34,7 @@
                               var pixabayURL = api2 + apiKey2;
                               
                               $.getJSON(weatherURL, function(data){
-                                        $.each(weatherData, function() {});
+                                        $.each(data, function() {});
                                         console.log(data);
                                         console.log("Weather desc listed from data not saved: " + data.weather[0].description);
                                         var weatherDesc = data.weather[0].description;
