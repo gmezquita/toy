@@ -41,7 +41,7 @@
                                         console.log("weatherDesc saved in variable (we need this for pixabay url): " + weatherDesc);
                                         
                                         $.getJSON(pixabayURL + "&q=" + weatherDesc, function(data2) {
-                                                  $.each(pixabayData, function() {});
+                                                  $.each(data2, function() {});
                                                   console.log(data2);
                                         });
                               });
