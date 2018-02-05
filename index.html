@@ -11,42 +11,44 @@
                               <h2>Enter a Location</h2>
 
                                         <input type="text" id="city">
-                                        <button id="search">Select</button>
+                                        <button onclick="sayHello()" id="search">Select</button>
                                         </br>
                                         </br>
                     </div>
                     
                     <script>
+                              getPicture() {
+                                     var picURL;
                               
-                              var picURL;
+                                        var api = "https://api.openweathermap.org/data/2.5/weather?q=";
+                                        var city = document.getElementById("city").value;
+                                        var units = "&units=imperial";
+                                        var apiKey = "&APPID=3a556b4fb442dc2dc5d66ccbda322754";
+                                        var weatherURL = api + city + units + apiKey;
+
+                                        var api2 = "https://pixabay.com/api/?&image_type=photo&pretty=true&";
+                                        var apiKey2 = "key=6747214-3dc8160dc8f5e1a8d06570837";
+                                        var pixabayURL = api2 + apiKey2;
+
+                                        $.getJSON(weatherURL, function(data){
+                                                  $.each(data, function() {});
+                                                  console.log(data);
+                                                  console.log("Weather desc listed from data not saved: " + data.weather[0].description);
+                                                  var weatherDesc = data.weather[0].description;
+                                                  $(".main" ).append( '<p>' + weatherDesc + '</p>');
+                                                  console.log("weatherDesc saved in variable (we need this for pixabay url): " + weatherDesc);
+
+                                                  $.getJSON(pixabayURL + "&q=" + weatherDesc, function(data2) {
+                                                            $.each(data2, function() {});
+                                                            console.log(data2);
+                                                            console.log("HERE:" + data2['hits'][0].previewURL);
+
+                                                            var picLink = data2['hits'][0].previewURL;
+                                                            $(".main" ).append( '<img src="' + picLink + '">');
+                                                  });
+                                        });   
+                              };
                               
-                              var api = "https://api.openweathermap.org/data/2.5/weather?q=";
-                              var city = document.getElementById("city").value;
-                              var units = "&units=imperial";
-                              var apiKey = "&APPID=3a556b4fb442dc2dc5d66ccbda322754";
-                              var weatherURL = api + city + units + apiKey;
-                              
-                              var api2 = "https://pixabay.com/api/?&image_type=photo&pretty=true&";
-                              var apiKey2 = "key=6747214-3dc8160dc8f5e1a8d06570837";
-                              var pixabayURL = api2 + apiKey2;
-                              
-                              $.getJSON(weatherURL, function(data){
-                                        $.each(data, function() {});
-                                        console.log(data);
-                                        console.log("Weather desc listed from data not saved: " + data.weather[0].description);
-                                        var weatherDesc = data.weather[0].description;
-                                        $(".main" ).append( '<p>' + weatherDesc + '</p>');
-                                        console.log("weatherDesc saved in variable (we need this for pixabay url): " + weatherDesc);
-                                        
-                                        $.getJSON(pixabayURL + "&q=" + weatherDesc, function(data2) {
-                                                  $.each(data2, function() {});
-                                                  console.log(data2);
-                                                  console.log("HERE:" + data2['hits'][0].previewURL);
-                                                  
-                                                  var picLink = data2['hits'][0].previewURL;
-                                                  $(".main" ).append( '<img src="' + picLink + '">');
-                                        });
-                              });
                                              
                     </script>
 
