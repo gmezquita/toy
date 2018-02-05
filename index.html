@@ -34,15 +34,15 @@
                               
                               $.getJSON(weatherURL, function(data){
                                         $.each(data, function() {});
-                                        console.log(data);
-                                        console.log("Weather desc listed from data not saved: " + data.weather[0].description);
+//                                         console.log(data);
+//                                         console.log("Weather desc listed from data not saved: " + data.weather[0].description);
                                         var weatherDesc = data.weather[0].description;
-                                        console.log("weatherDesc saved in variable (we need this for pixabay url): " + weatherDesc);
+//                                         console.log("weatherDesc saved in variable (we need this for pixabay url): " + weatherDesc);
                                         
                                         $.getJSON(pixabayURL + "&q=" + weatherDesc, function(data2) {
                                                   $.each(data2, function() {});
-                                                  console.log(data2);
-                                                  console.log("HERE:" + data2['hits'][0].previewURL);
+//                                                   console.log(data2);
+//                                                   console.log("HERE:" + data2['hits'][0].previewURL);
                                                   
                                                   var picLink = data2['hits'][0].previewURL;
                                                   $(".main" ).append( '<img src="' + picLink + '">');
