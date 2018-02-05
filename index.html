@@ -44,8 +44,10 @@
                                         $.getJSON(pixabayURL + "&q=" + weatherDesc, function(data2) {
                                                   $.each(data2, function() {});
                                                   console.log(data2);
+                                                  console.log("HERE:" + data2[0]['previewURL']);
                                                   
-                                                  $( ".main" ).append( '<img src="https://cdn.pixabay.com/photo/2018/01/05/16/24/rose-3063284_150.jpg" alt="pixabay.com">');
+                                                  var picLink = ;
+                                                  $(".main" ).append( '<img src="' + picLink + '">');
                                         });
                               });
                                              
