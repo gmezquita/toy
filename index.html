@@ -44,7 +44,7 @@
                                         $.getJSON(pixabayURL + "&q=" + weatherDesc, function(data2) {
                                                   $.each(data2, function() {});
                                                   console.log(data2);
-                                                  console.log("HERE:" + data2['hits'][0]);
+                                                  console.log("HERE:" + data2['hits'][0].previewURL);
                                                   
 //                                                   var picLink = ;
 //                                                   $(".main" ).append( '<img src="' + picLink + '">');
