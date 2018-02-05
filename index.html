@@ -37,7 +37,7 @@
                                         console.log(data);
                                         console.log("Weather desc listed from data not saved: " + data.weather[0].description);
                                         var weatherDesc = data.weather[0].description;
-                                        $(".main" ).append( '<p>"' + weatherDesc + '</p>');
+                                        $(".main" ).append( '<p>' + weatherDesc + '</p>');
                                         console.log("weatherDesc saved in variable (we need this for pixabay url): " + weatherDesc);
                                         
                                         $.getJSON(pixabayURL + "&q=" + weatherDesc, function(data2) {
